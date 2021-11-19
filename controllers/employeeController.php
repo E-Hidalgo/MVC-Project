@@ -9,12 +9,22 @@ $action= $_GET["action"];
 }
 
 if(function_exists($action)) {
-  echo "si existe";
   call_user_func($action);
 } else {
-  echo "no existe";
+  error("This function is not working at the moment!");
 }
 
 function getAllEmployees(){
-  echo "dentro de la función";
-};
+$employees = get();
+
+if(isset($employees)) {
+  require_once VIEWS . "employee/employeeDashboard.php";
+} else {
+  error("There was some problem with the server!");
+}
+  }
+
+function error($errorMsg)
+{
+    require_once VIEWS . "/error/error.php";
+}

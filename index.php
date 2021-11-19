@@ -1,6 +1,8 @@
 <?php
 
-require_once "./config/constants.php";
-require_once "./config/db.php";
+require_once ("./config/baseConstants.php");
+require_once ("./config/db.php");
 
-echo "hola";
+if(isset($_GET["controller"])) {
+  echo "Hey";
+}

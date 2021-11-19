@@ -1,6 +1,6 @@
 <?php
 
-require_once MODELS . "employeeModel.php";
+require_once MODELS . "agentModel.php";
 
 $action= "";
 
@@ -14,11 +14,11 @@ if(function_exists($action)) {
   error("This function is not working at the moment!");
 }
 
-function getAllEmployees(){
-$employees = get();
+function getAllAgents(){
+$agents = get();
 
-if(isset($employees)) {
-  require_once VIEWS . "employee/employeeDashboard.php";
+if(isset($agents)) {
+  require_once VIEWS . "agents/agentsDashboard.php";
 } else {
   error("There was some problem with the server!");
 }

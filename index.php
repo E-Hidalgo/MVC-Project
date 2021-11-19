@@ -13,6 +13,8 @@ require_once ($controller);
 $errorMsg= "The page you are trying to access doesn't exist!";
 require_once VIEWS . "error/error.php";
 };
+} else {
+  require_once VIEWS . "main/main.php";
 }
 
 // This returns the controller path dinamically.

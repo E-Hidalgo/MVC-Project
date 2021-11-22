@@ -16,3 +16,25 @@ function get()
         return [];
     }
 }
+
+function bringAgentInfo($agent_code) {
+    $query = conn()->prepare("SELECT agent_code, agent_name, working_area, comission, phone_no, country
+     FROM agents
+     WHERE agent_code = '$agent_code'");
+   
+       
+
+     try {
+        $query->execute();
+        $agent = $query->fetchAll();
+        return $agent;
+    } catch (PDOException $e) {
+        return [];
+    }
+}
+
+function deleteFromDb() {
+    // $query = conn()->prepare("DELETE FROM agents WHERE agent_code");
+
+    
+}

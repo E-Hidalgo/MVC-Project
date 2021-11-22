@@ -3,6 +3,10 @@
 require_once MODELS . "agentModel.php";
 
 $action= "";
+$agent = "";
+
+
+
 
 if(isset($_GET["action"])) {
 $action= $_GET["action"];
@@ -23,6 +27,25 @@ if(isset($agents)) {
   error("There was some problem with the server!");
 }
   }
+
+// EDIT AGENT
+function editAgent() {
+  if(isset($_GET["agent_code"])) {
+    echo $_GET["agent_code"];
+    $agent_code = $_GET["agent_code"];
+    $agent= bringAgentInfo($agent_code);
+  }
+  
+  require_once VIEWS . "editAgent/editAgent.php";
+}
+
+ function deleteAgent() {
+   require_once VIEWS . "deleteAgent/deleteAgent.php";
+ }
+
+ function confirmDelete() {
+  require_once VIEWS . "agents/agentsDashboard.php";
+ }
 
 function error($errorMsg)
 {

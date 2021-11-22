@@ -14,7 +14,7 @@
 
   </style>
   <div class="container-md">
-    <table class="table">
+    <table class="table border">
       <thead>
         <tr>
           <th class="tg-0pky">Agent Code</th>
@@ -37,8 +37,8 @@
                 echo "<td class='tg-0lax'>" . $agent["phone_no"] . "</td>";
                 echo "<td class='tg-0lax'>" . $agent["country"] . "</td>";
                 echo "<td colspan='2' class='tg-0lax'>
-                <a class='btn btn-secondary' href='?controller=agent&action=getEmployee&id=" . $agent["agent_code"] . "'>Edit</a>
-                <a class='btn btn-danger' href='?controller=agent&action=deleteEmployee&id=" . $agent["agent_code"] . "'>Delete</a>
+                <a class='btn btn-secondary' href='?controller=agent&action=editAgent&agent_code=" . $agent["agent_code"] . "'>Edit</a>
+                <a class='btn btn-danger' href='?controller=agent&action=deleteAgent&agent_code=" . $agent["agent_code"] . "'>Delete</a>
                 </td>";
                 echo "</tr>";
             }

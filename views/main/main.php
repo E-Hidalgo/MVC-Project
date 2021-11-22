@@ -9,10 +9,29 @@
 </head>
 
 <body>
-  <h1>Welcome to MVC Pattern Basics!</h1>
-  <div class="list-group">
-    <a class="list-group-item list-group-item-action" href="?controller=agent&action=getAllAgents">Agents
-      Controller</a>
+  <div class="container text-center mt-4">
+    <h1 class="h1">Travel Safe, Travel Far Away</h1>
+  </div>
+
+
+  <div class="container mt-4" style="width: 18rem">
+
+
+    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+      <div class="card-header">
+        <img src="https://www.collinsdictionary.com/images/full/travelagent_604880111_1000.jpg" alt="Yeka"
+          class="card-img">
+      </div>
+      <div class="card-body">
+        <a class="list-group-item list-group-item-action" href="?controller=agent&action=getAllAgents">See
+          Agents</a>
+      </div>
+
+    </div>
+
+
+
+
 </body>
 
 </html>

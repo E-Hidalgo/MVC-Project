@@ -1,3 +1,5 @@
+<?php echo $_GET["agent_code"]
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +16,8 @@
 <body>
   <h2>Edit Agent <?= $agent[0]["agent_name"]?></h2>
   <div>
-    <form action="./error/error.php" method="POST" class="container-sm card py-4">
+    <form action="?controller=agent&action=updateDB&agent_code=<?= $_GET["agent_code"]?>" method="POST"
+      class="container-sm card py-4">
       <label for="">Name</label>
       <input class="mb-2" type="text" name="agent_name" value="<?= $agent[0]["agent_name"]?>">
       <label for="">Working Area</label>

@@ -35,14 +35,17 @@ function editAgent() {
   require_once VIEWS . "editAgent/editAgent.php";
 }
 
-function updateAgent() {
-  header("location: ./index.php");
-  echo $_POST["agent_name"];
+function updateDB() {
+   $agent_code = $_GET["agent_code"];
+   echo $agent_code;
+   getUpdatedAgent($agent_code);
+   getAllAgents();
+
 }
 
  function deleteAgent() {
    require_once VIEWS . "deleteAgent/deleteAgent.php";
-   echo $agent_code;
+  //  echo $agent_code;
  }
 
  function confirmDelete() {
@@ -50,10 +53,9 @@ echo $_GET["agent_code"];
   if(isset($_GET["agent_code"])) {
      deleteFromDb($_GET["agent_code"]);
   }
- getAllAgents();
- }
+}
+ 
 
-function error($errorMsg)
-{
+function error($errorMsg){
     require_once VIEWS . "/error/error.php";
 }

@@ -20,9 +20,7 @@ function get()
 function bringAgentInfo($agent_code) {
     $query = conn()->prepare("SELECT agent_code, agent_name, working_area, comission, phone_no, country
      FROM agents
-     WHERE agent_code = '$agent_code'");
-   
-       
+     WHERE agent_code = '$agent_code'"); 
 
      try {
         $query->execute();
@@ -47,4 +45,33 @@ function deleteFromDb($agent_code) {
         echo "Error";
         return [];
     }
+};
+
+function getUpdatedAgent($agent_code) {
+   $a= $_POST;
+   echo $name =$a["agent_name"];
+   echo "<br>";
+   echo $work =$a["working_area"];
+   echo "<br>";
+   echo $com =$a["comission"];
+   echo "<br>";
+   echo $ph =$a["phone_no"];
+   echo "<br>";
+   echo $country =$a["country"];
+   echo "<br>";
+
+       $query = conn()->prepare("UPDATE agents SET agent_name = '$name', working_area = '$work', comission = $com, phone_no= $ph, country = '$country' WHERE agent_code = '$agent_code'");
+
+
+      try {
+        $query->execute();
+    
+    
+   } catch (PDOException $e) {
+       echo "Error";
+       return [];
+   }
+    
 }
+
+?>

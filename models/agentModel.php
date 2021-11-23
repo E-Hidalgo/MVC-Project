@@ -33,8 +33,18 @@ function bringAgentInfo($agent_code) {
     }
 }
 
-function deleteFromDb() {
-    // $query = conn()->prepare("DELETE FROM agents WHERE agent_code");
+function deleteFromDb($agent_code) {
+   
+   echo $agent_code; 
+   $query = conn()->prepare("DELETE FROM agents WHERE agent_code = '$agent_code'");
+   echo "hola";
 
-    
+      try {
+         $query->execute();
+       echo "Done";
+     
+    } catch (PDOException $e) {
+        echo "Error";
+        return [];
+    }
 }

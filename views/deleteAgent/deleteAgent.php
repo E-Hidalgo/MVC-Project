@@ -1,3 +1,6 @@
+<?php 
+$agent_code= $_GET["agent_code"];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,9 +14,9 @@
 </head>
 
 <body>
-  <div class="container-sm border m-4 p-4 rounded text-center ">
+  <div class="container-sm border m-4 p-4 rounded text-center">
     <h4>Are you sure you want to delete?</h4>
-    <a href="?controller=agent&action=confirmDelete&agent_code=" class="btn btn-danger">Delete</a>
+    <a href="?controller=agent&action=confirmDelete&agent_code=<?=$agent_code?>" class="btn btn-danger">Delete</a>
   </div>
 </body>
 

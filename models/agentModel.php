@@ -74,4 +74,24 @@ function getUpdatedAgent($agent_code) {
     
 }
 
+function addNewAgent() {
+    $query = conn()->prepare("INSERT INTO agents VALUES (
+    '$_POST[agent_code]',
+    '$_POST[agent_name]',
+    '$_POST[working_area]',
+    $_POST[comission],
+    $_POST[phone_no],
+    '$_POST[country]'
+    )
+    ");
+    
+    try {
+    $query->execute();
+    echo "Done";
+    } catch (PDOException $e) {
+    echo "Error";
+    return [];
+    }
+}
+
 ?>

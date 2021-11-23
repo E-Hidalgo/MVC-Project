@@ -59,3 +59,14 @@ echo $_GET["agent_code"];
 function error($errorMsg){
     require_once VIEWS . "/error/error.php";
 }
+
+function createAgent(){
+  require_once VIEWS . "createAgent/createAgent.php";
+
+
+}
+
+function agentCreated() {
+  addNewAgent();
+  getAllAgents();
+}
